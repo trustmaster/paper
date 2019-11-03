@@ -1,22 +1,125 @@
+body {
+  font-family:georgia, serif; 
+  font-size:120%;
+  line-height:1.6;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  padding: 10px;
 }
 
-.App-link {
-  color: #09d3ac;
+.Sidebar {
+  width: 300px;
+  padding: 20px;
+  justify-content: left;
+  /* background: #443022; */
+  background: #69585F;
+  color: azure;
+  border-radius: 3px;
 }
+
+.Content{
+  width: 100%;
+  padding: 20px;
+  justify-content: center;
+  background: #eeeeee;
+}
+
+.Page {
+  width:21cm;
+  margin: 0 auto;
+  padding: 10px 30px 30px 30px;
+  /* background: #ffffee; */
+  background: #EFEBCE;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+  border-radius: 3px;
+}
+
+.Page a {outline:none !important; font-weight:bold; text-decoration:none;color: #9A6D70;}
+.Page a:link {color: #9A6D70;}
+.Page a:visited {color:#BB8588;}
+.Page a:hover {color:#AA797C;}
+.Page a:active {color:#896163; outline:none;}
+
+.Page button {
+  background: #815E5B;
+  color: #FFFFEE;
+  border-radius: 3px;
+}
+
+h1 {
+  font-size:320%;
+  line-height:1.35;
+  font-style:normal;
+  margin:0.5em 0 0.5em;
+}
+
+h2 {
+  font-weight:bold;
+  font-size:200%;
+  margin:1em 0 0.5em;
+}
+
+h3 {
+  font-weight:normal;
+  text-transform:uppercase;
+  font-size:150%;
+  letter-spacing:0.15em;
+  margin:1em 0 0.5em;
+}
+
+h4 {
+  font-weight:normal;
+  font-size:150%;
+  letter-spacing:0.1em;
+  margin:1em 0 0.5em;
+}
+
+h5 {
+  font-weight:normal;
+  font-style:italic;
+  font-size:150%;
+  margin:1em 0 0.5em;
+}
+
+h6 {
+  font-weight:bold;
+  font-size:100%;
+  letter-spacing:0.1em;
+  margin:1em 0 0.5em;
+}
+
+p {
+  text-align:left;
+  font-size:100%;
+  margin:1em 0 0;
+}
+
+p.lead {
+  font-size:150%;
+  margin:1em 0;
+}
+
+p + p {
+  margin:0;
+  text-indent:1.5em;
+}
+
+p + ul, p + ol, p + dl {margin-bottom:1.5em;}
+p.lead + p {
+  text-indent:0;
+}
+
+blockquote {border-left:5px solid #815E5B; padding-left:1.5em; margin:1em 0;}
+blockquote small {display:block; line-height:1.7em;}
+ul, ol, dl {
+  text-align:left;
+}
+
+dt {font-weight:bold;}
+code {font-family:courier, monospace;}
+p > code {padding:0.25em; background:#eee;}
+pre {text-align:left; font-size:100%;}
+hr {height:0; color:#eee; border:1px solid #eee; margin:2em 0 1em;}

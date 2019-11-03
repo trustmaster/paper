@@ -1,68 +1,54 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Learning React by building a blog App.
 
-## Available Scripts
+## MVP
 
-In the project directory, you can run:
+The app consists of two panels. The left panel is a sidebar displaying a tree table of contents of the blog. Contents can be sorted by drag & drop. New posts can be created by clicking a "+" button. Posts can be deleted via context menu.
 
-### `npm start`
+The right panel displays posts as a single feed. Editing posts and creating content is seamless (think of Medium). For the MVP just standard formatting is enough. Media content is extra.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Data is saved as local HTML files. This can be done either via thin Node.js server, or by packaging it as an Electron app.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Plan
 
-### `npm test`
+### Mock
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A static mockup with the outline of the future application:
 
-### `npm run build`
+- Sidebar panel on the left with Table of contents as a list. Last item of the list is a "+" button to add a new post.
+- Main content area on the right with A4-sized pages displaying posts. Each post has: `title`, `subtitle`, `date`, `text` (formatted).
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### React components
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+The app is still static but the layout is converted into React components:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- App
+  - Sidebar
+    - Navigation
+      - NavItem
+      - NewPost
+  - Content
+    - Post
+      - Date
+      - Text
 
-### `npm run eject`
+### Interactive content
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+On this stage interactivity is added, so posts become editable and new posts can be added to the app. However, state is neither propagated throughout the app, nor persisted.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### State management
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Time to introduce Redux for state management and to bring Content and Sidebar together.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Additionally, operations like deleting posts should be implemented.
 
-## Learn More
+### Ordering content
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Posts can be ordered via Drag & Drop in the sidebar.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+_Additional: could intoduce hierarchy like Categories or Chapters at this step and implement nesting together with Drag & Drop._
 
-### Code Splitting
+### Persistence
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+At this point we have complete state management and all changes avialable in the UI, but these changes are not saved between sessions.
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Here we connect the store with either a simple Node.js server or move the app to Electron, and implement a persistent storage and loading from local file system.
