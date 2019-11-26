@@ -6,7 +6,7 @@ class Content extends React.Component {
     render() {
         return (
             <div className="Content">
-                <div class="Page">
+                <div className="Page">
                     <h1>My blog on paper</h1>
                     <p><em>This blog is all about cats, for cats, written by other cats.</em></p>
 
