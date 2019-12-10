@@ -8,7 +8,7 @@ const initialState = {
     ],
 };
 
-function title(state = initialState.title, action) {
+export function title(state = initialState.title, action) {
     switch (action.type) {
         case SET_TITLE:
             return action.title;
@@ -17,7 +17,7 @@ function title(state = initialState.title, action) {
     }
 }
 
-function description(state = initialState.description, action) {
+export function description(state = initialState.description, action) {
     switch (action.type) {
         case SET_DESCRIPTION:
             return action.description;
@@ -26,7 +26,7 @@ function description(state = initialState.description, action) {
     }
 }
 
-function posts(state = [], action) {
+export function posts(state = [], action) {
     switch (action.type) {
         case CREATE_POST:
             return [
