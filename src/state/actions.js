@@ -19,8 +19,8 @@ export function setDescription(description) {
     return { type: SET_DESCRIPTION, description };
 }
 
-export function createPost() {
-    return { type: CREATE_POST, id: generateId(16), date: new Date() };
+export function createPost(id, date) {
+    return { type: CREATE_POST, id, date };
 }
 
 export function setPostTitle(id, title) {
@@ -43,7 +43,7 @@ export function movePost(id, index) {
     return { type: MOVE_POST, index };
 }
 
-function generateId(length) {
+export function generateId(length) {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-';
     let res = '';
     for (let i = 0; i < length; i++) {
