@@ -40,7 +40,7 @@ export function deletePost(id) {
 }
 
 export function movePost(id, index) {
-    return { type: MOVE_POST, index };
+    return { type: MOVE_POST, id, index };
 }
 
 export function generateId(length) {

@@ -63,7 +63,8 @@ export function posts(state = [], action) {
         case DELETE_POST:
             return state.filter((post) => post.id !== action.id);
         case MOVE_POST:
-            return state.map((post, index) => {
+            return state.map((post) => {
+                // TODO change this so that indexes don't grow rapidly
                 if (post.id === action.id) {
                     return Object.assign({}, post, { index: action.index });
                 }
