@@ -10,14 +10,14 @@ Data is saved as local HTML files. This can be done either via thin Node.js serv
 
 ## Plan
 
-### Mock
+### Mock :white_check_mark:
 
 A static mockup with the outline of the future application:
 
 - Sidebar panel on the left with Table of contents as a list. Last item of the list is a "+" button to add a new post.
-- Main content area on the right with A4-sized pages displaying posts. Each post has: `title`, `subtitle`, `date`, `text` (formatted).
+- Main content area on the right with A4-sized pages displaying posts. Each post has: `title`, `date`, `text` (formatted).
 
-### React components
+### React components :white_check_mark:
 
 The app is still static but the layout is converted into React components:
 
@@ -31,7 +31,7 @@ The app is still static but the layout is converted into React components:
       - Date
       - Text
 
-### Interactive content
+### Interactive content :clock1:
 
 On this stage interactivity is added, so posts become editable and new posts can be added to the app. However, state is neither propagated throughout the app, nor persisted.
 
