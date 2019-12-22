@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Date({ date }) {
-    return <span className="date">{date.toLocaleString}</span>;
+    return <span>{date.toLocaleDateString()}</span>;
 }
 
 export default Date;

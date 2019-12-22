@@ -48,6 +48,11 @@ body {
 .Page a:hover {color:#AA797C;}
 .Page a:active {color:#896163; outline:none;}
 
+.Page .Date {
+  text-align: right;
+  margin-right: 20px;
+}
+
 .Page button {
   background: #815E5B;
   color: #FFFFEE;
