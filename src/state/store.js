@@ -1,4 +1,5 @@
 import { createStore } from "redux";
-import blog, { initialState } from "./reducers";
+import blog from "./reducers";
+import initialState from "./initial";
 
 export const store = createStore(blog, initialState);
