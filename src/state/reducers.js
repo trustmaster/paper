@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { CREATE_POST, SET_TITLE, SET_DESCRIPTION, SET_POST_TITLE, SET_POST_DATE, SET_POST_TEXT, DELETE_POST, MOVE_POST } from "./actions";
 
-const initialState = {
+export const initialState = {
     title: 'My Blog on Paper',
     description: 'Minimalist blog writing and display as if I was writing it on paper',
     posts: [
