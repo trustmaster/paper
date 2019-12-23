@@ -12,6 +12,7 @@ class Content extends React.Component {
 
                     {this.props.posts.map((post, index) => (
                         <Post
+                            id={post.id}
                             key={post.id}
                             title={post.title}
                             date={post.date}
