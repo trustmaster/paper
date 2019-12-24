@@ -10,7 +10,11 @@ class Editable extends React.Component {
                 <Editor
                     text={this.props.text}
                     onChange={this.props.onChange}
-                    options={{ toolbar: { buttons: ['bold', 'italic', 'underline'] } }}
+                    options={{
+                        toolbar: { buttons: ['bold', 'italic', 'underline', 'quote', 'orderedlist', 'unorderedlist', 'removeFormat'] },
+                        forcePlainText: false,
+                        cleanPastedHTML: true
+                    }}
                 />
             </div>
         )
