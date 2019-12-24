@@ -6,9 +6,8 @@ class Text extends React.Component {
         super(props);
         this.state = {
             text: props.text,
-            isEditing: props.id === 'abc-002', // false,
+            isEditing: true, // false
         }
-        console.log(props.id, this.state.isEditing);
     }
 
     handleChange = (text) => {
