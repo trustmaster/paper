@@ -2,6 +2,7 @@ import React from 'react';
 
 import Post from './Post';
 import Editable from './Editable';
+import AddPost from './AddPost/AddPost';
 
 class Content extends React.Component {
     render() {
@@ -12,21 +13,10 @@ class Content extends React.Component {
                     <p><em><Editable text={this.props.description} /></em></p>
 
                     {this.props.posts.map((post, index) => (
-                        <Post
-                            id={post.id}
-                            key={post.id}
-                            title={post.title}
-                            date={post.date}
-                            text={post.text}
-                        />
+                        <Post data={post} />
                     ))}
 
-                    <Post
-                        title="New Post"
-                        date={new Date()}
-                        text="Inserting new content here..."
-                    />
-                    <button>Save</button>
+                    <AddPost text="Add Post" />
                 </div>
             </div>
         );

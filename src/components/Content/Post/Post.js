@@ -4,14 +4,14 @@ import Editable from '../Editable';
 
 class Post extends React.Component {
     render() {
-
+        const { title, date, image, text } = this.props.data;
         return (
             <div className="Post">
-                <h2><Editable text={this.props.title} /></h2>
-                <h5 className="Date"><Date date={this.props.date} /></h5>
-                {this.props.image && (<img src="{this.props.image}" alt="" />)}
+                <h2><Editable text={title} /></h2>
+                <h5 className="Date"><Date date={date} /></h5>
+                {image && (<img src="{image}" alt="" />)}
                 <div class="Text">
-                    <Editable rich="true" text={this.props.text} />
+                    <Editable rich="true" text={text} />
                 </div>
             </div>
         );
