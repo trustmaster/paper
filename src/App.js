@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 
-import Sidebar from './components/Sidebar';
 import initialState from './state/initial';
 import ContentContainer from './components/Content/ContentContainer';
+import SidebarContainer from './components/Sidebar/SidebarContainer';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Sidebar posts={this.state.posts} />
+        <SidebarContainer />
         <ContentContainer />
       </div>
     );
