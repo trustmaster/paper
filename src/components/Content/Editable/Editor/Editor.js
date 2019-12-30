@@ -9,6 +9,7 @@ class Editor extends React.Component {
             toolbar: { buttons: [] },
             forcePlainText: true,
             cleanPastedHTML: true,
+            disableReturn: true,
         };
         if (this.props.rich !== undefined) {
             opts.forcePlainText = false;

@@ -9,7 +9,7 @@ const Post = ({ data, onTitleChange, onDateChange, onTextChange }) => {
             <h2><Editable text={title} onChange={onTitleChange} /></h2>
             <h5 className="Date"><Date date={date} onChange={onDateChange} /></h5>
             {image && (<img src="{image}" alt="" />)}
-            <div class="Text">
+            <div className="Text">
                 <Editable rich="true" text={text} onChange={onTextChange} />
             </div>
         </div>

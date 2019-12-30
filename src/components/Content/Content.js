@@ -11,7 +11,7 @@ const Content = ({ title, description, postIds }) => {
                 <p><em><Editable text={description} /></em></p>
 
                 {postIds.map((id) => (
-                    <PostContainer id={id} />
+                    <PostContainer key={id} id={id} />
                 ))}
 
                 <AddPost text="Add Post" />
