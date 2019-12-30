@@ -1,11 +1,12 @@
 import { connect } from "react-redux";
 import Content from "./Content";
+import selectPostIds from "./ContentSelector";
 
 const mapStateToProps = (state) => {
     return {
         title: state.title,
         description: state.description,
-        posts: state.posts,
+        postIds: selectPostIds(state),
     };
 }
 

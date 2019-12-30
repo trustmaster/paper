@@ -5,10 +5,7 @@ import onClickOutside from "react-onclickoutside";
 class Editable extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            text: props.text,
-            isEditing: true,
-        };
+        this.isEditing = true;
         this.updatedText = '';
     }
 
@@ -23,16 +20,16 @@ class Editable extends React.Component {
         if (this.updatedText === '') {
             return;
         }
-        this.setState({ text: this.updatedText });
+        this.props.onChange(this.updatedText);
         this.updatedText = '';
     }
 
     render() {
-        const html = { __html: this.state.text };
+        const html = { __html: this.props.text };
         return (
             <span className="Editable">
-                {this.state.isEditing ? (
-                    <Editor rich={this.props.rich} text={this.state.text} onChange={this.handleChange} />
+                {this.isEditing ? (
+                    <Editor rich={this.props.rich} text={this.props.text} onChange={this.handleChange} />
                 ) : (
                         <span className="static" dangerouslySetInnerHTML={html}></span>
                     )}
