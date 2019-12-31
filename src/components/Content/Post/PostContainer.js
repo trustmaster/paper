@@ -15,7 +15,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
             dispatch(setPostTitle(ownProps.id, text));
         },
         onDateChange: (date) => {
-            console.log(date);
             dispatch(setPostDate(ownProps.id, date));
         },
         onTextChange: (text) => {

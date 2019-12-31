@@ -14,6 +14,7 @@ class Editor extends React.Component {
         if (this.props.rich !== undefined) {
             opts.forcePlainText = false;
             opts.toolbar = { buttons: ['bold', 'italic', 'underline', 'quote', 'orderedlist', 'unorderedlist', 'removeFormat'] };
+            opts.disableReturn = false;
         }
         return (
             <div className="Editor">

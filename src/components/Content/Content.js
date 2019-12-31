@@ -1,7 +1,7 @@
 import React from 'react';
 import Editable from './Editable';
-import AddPost from './AddPost/AddPost';
 import PostContainer from './Post/PostContainer';
+import AddPostContainer from './AddPost/AddPostContainer';
 
 const Content = ({ title, description, postIds }) => {
     return (
@@ -14,7 +14,7 @@ const Content = ({ title, description, postIds }) => {
                     <PostContainer key={id} id={id} />
                 ))}
 
-                <AddPost text="Add Post" />
+                <AddPostContainer text="Add Post" />
             </div>
         </div>
     );

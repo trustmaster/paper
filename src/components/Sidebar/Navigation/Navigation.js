@@ -1,4 +1,5 @@
 import React from 'react';
+import AddPostContainer from '../../Content/AddPost/AddPostContainer';
 
 const Navigation = ({ posts }) => {
     return (
@@ -6,7 +7,7 @@ const Navigation = ({ posts }) => {
             {posts.map((post) =>
                 <li key={post.id}>{post.title}</li>
             )}
-            <li><button>+</button></li>
+            <li><AddPostContainer text="+" /></li>
         </ul>
     );
 }
