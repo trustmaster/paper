@@ -31,7 +31,7 @@ The app is still static but the layout is converted into React components:
       - Date
       - Text
 
-### Interactive content :clock1:
+### Interactive content :white_check_mark:
 
 On this stage interactivity is added, so posts become editable and new posts can be added to the app. However, state is neither propagated throughout the app, nor persisted.
 
