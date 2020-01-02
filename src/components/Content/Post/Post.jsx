@@ -2,8 +2,12 @@ import React from 'react';
 import Date from './Date';
 import Editable from '../Editable';
 
-const Post = ({ data, onTitleChange, onDateChange, onTextChange }) => {
-    const { title, date, image, text } = data;
+const Post = ({
+    data, onTitleChange, onDateChange, onTextChange,
+}) => {
+    const {
+        title, date, image, text,
+    } = data;
     return (
         <div className="Post">
             <h2><Editable text={title} onChange={onTitleChange} /></h2>
@@ -14,6 +18,6 @@ const Post = ({ data, onTitleChange, onDateChange, onTextChange }) => {
             </div>
         </div>
     );
-}
+};
 
 export default Post;
