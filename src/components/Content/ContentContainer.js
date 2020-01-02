@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Content from './Content';
-import selectPostIds from './ContentSelector';
+import selectPostIds from './ContentSelectors';
 
 const mapStateToProps = (state) => ({
     title: state.title,

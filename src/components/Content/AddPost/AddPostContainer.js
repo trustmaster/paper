@@ -10,7 +10,6 @@ const mapDispatchToProps = (dispatch) => ({
     onClick: () => {
         const id = generateId(16);
         const date = new Date();
-        console.log('Dispatching', id, date);
         dispatch(createPost(id, date));
     },
 });
