@@ -1,5 +1,5 @@
 import React from 'react';
-import AddPostContainer from '../../Content/AddPost/AddPostContainer';
+import AddPostContainer from '../../Controls/AddPost/AddPostContainer';
 
 const Navigation = ({ posts }) => (
     <ul>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Editable from './Editable';
 import PostContainer from './Post/PostContainer';
-import AddPostContainer from './AddPost/AddPostContainer';
+import AddPostContainer from '../Controls/AddPost/AddPostContainer';
 
 const Content = ({ title, description, postIds }) => (
     <div className="Content">
