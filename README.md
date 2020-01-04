@@ -63,7 +63,7 @@ The app is still static but the layout is converted into React components:
 
 On this stage interactivity is added, so posts become editable and new posts can be added to the app. However, state is neither propagated throughout the app, nor persisted.
 
-#### State management :clock2:
+#### State management :white_check_mark:
 
 Time to introduce Redux for state management and to bring Content and Sidebar together.
 
