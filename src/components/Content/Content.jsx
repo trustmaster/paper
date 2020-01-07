@@ -13,7 +13,7 @@ const Content = ({
     <div className="Content">
         <div className="Page">
             <h1><Editable text={title} onChange={onTitleChange} /></h1>
-            <p className="subtitle"><em><Editable text={description} onChange={onDescriptionChange} /></em></p>
+            <div className="subtitle"><em><Editable text={description} onChange={onDescriptionChange} /></em></div>
 
             {postIds.map((id) => (
                 <PostContainer key={id} id={id} />
