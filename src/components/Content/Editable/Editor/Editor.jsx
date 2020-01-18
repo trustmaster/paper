@@ -6,7 +6,7 @@ import 'medium-editor/dist/css/themes/default.css';
 export default class Editor extends React.Component {
     componentDidMount() {
         const dom = this.node;
-        const { rich, onChange } = this.props;
+        const { rich, onChange, onBlur } = this.props;
 
         const opts = {
             toolbar: { buttons: [] },
@@ -24,6 +24,9 @@ export default class Editor extends React.Component {
         this.medium = new MediumEditor(dom, opts);
         this.medium.subscribe('editableInput', () => {
             onChange(dom.innerHTML, this.medium);
+        });
+        this.medium.subscribe('blur', () => {
+            onBlur(dom.innerHTML, this.medium);
         });
     }
 

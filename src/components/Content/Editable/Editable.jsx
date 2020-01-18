@@ -1,8 +1,7 @@
 import React from 'react';
-import onClickOutside from 'react-onclickoutside';
 import Editor from './Editor';
 
-class Editable extends React.Component {
+export default class Editable extends React.Component {
     constructor(props) {
         super(props);
         this.isEditing = true;
@@ -16,7 +15,7 @@ class Editable extends React.Component {
         this.updatedText = text;
     }
 
-    handleClickOutside = () => {
+    handleBlur = () => {
         if (this.updatedText === '') {
             return;
         }
@@ -31,11 +30,9 @@ class Editable extends React.Component {
         return (
             <span className="Editable">
                 {this.isEditing ? (
-                    <Editor rich={rich} text={text} onChange={this.handleChange} />
+                    <Editor rich={rich} text={text} onChange={this.handleChange} onBlur={this.handleBlur} />
                 ) : (<span className="static" dangerouslySetInnerHTML={html} />)}
             </span>
         );
     }
 }
-
-export default onClickOutside(Editable);
