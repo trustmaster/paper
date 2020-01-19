@@ -19,10 +19,18 @@ export default class Editable extends React.Component {
         if (this.updatedText === '') {
             return;
         }
-        const { onChange } = this.props;
-        onChange(this.updatedText);
+        const { rich, onChange } = this.props;
+        const text = rich ? this.updatedText : this.unescape(this.updatedText);
+        onChange(text);
         this.updatedText = '';
     }
+
+    unescape = (text) => text.replace('&amp;', '&')
+        .replace('&quot;', '"')
+        .replace('&lt;', '<')
+        .replace('&gt;', '>')
+        .replace('&nbsp;', '')
+        .trim()
 
     render() {
         const { rich, text } = this.props;
@@ -30,7 +38,12 @@ export default class Editable extends React.Component {
         return (
             <span className="Editable">
                 {this.isEditing ? (
-                    <Editor rich={rich} text={text} onChange={this.handleChange} onBlur={this.handleBlur} />
+                    <Editor
+                        rich={rich}
+                        text={text}
+                        onChange={this.handleChange}
+                        onBlur={this.handleBlur}
+                    />
                 ) : (<span className="static" dangerouslySetInnerHTML={html} />)}
             </span>
         );
