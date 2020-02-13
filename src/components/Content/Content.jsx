@@ -1,7 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Editable from './Editable';
-import PostContainer from './Post/PostContainer';
-import AddPostContainer from '../Controls/AddPost/AddPostContainer';
+import Post from './Post';
+import AddPost from '../Controls/AddPost';
+import { setDescription, setTitle } from '../../state/actions';
+import selectPostIds from './ContentSelectors';
 
 const Content = ({
     title,
@@ -16,12 +19,23 @@ const Content = ({
             <div className="subtitle"><em><Editable text={description} onChange={onDescriptionChange} /></em></div>
 
             {postIds.map((id) => (
-                <PostContainer key={id} id={id} />
+                <Post key={id} id={id} />
             ))}
 
-            <AddPostContainer text="Add Post" />
+            <AddPost text="Add Post" />
         </div>
     </div>
 );
 
-export default Content;
+const mapStateToProps = (state) => ({
+    title: state.title,
+    description: state.description,
+    postIds: selectPostIds(state),
+});
+
+const mapDispatchToProps = {
+    onTitleChange: setTitle,
+    onDescriptionChange: setDescription,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Content);

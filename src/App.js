@@ -2,23 +2,23 @@ import React from 'react';
 import './App.css';
 
 import initialState from './state/initial';
-import ContentContainer from './components/Content/ContentContainer';
-import SidebarContainer from './components/Sidebar/SidebarContainer';
+import Content from './components/Content';
+import Sidebar from './components/Sidebar';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = initialState;
-  }
+    constructor(props) {
+        super(props);
+        this.state = initialState;
+    }
 
-  render() {
-    return (
-      <div className="App">
-        <SidebarContainer />
-        <ContentContainer />
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="App">
+                <Sidebar />
+                <Content />
+            </div>
+        );
+    }
 }
 
 export default App;

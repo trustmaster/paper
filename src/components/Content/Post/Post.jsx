@@ -1,6 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Date from './Date';
 import Editable from '../Editable';
+import selectPostById from './PostSelectors';
+import { setPostTitle, setPostDate, setPostText } from '../../../state/actions';
 
 const Post = ({
     data, onTitleChange, onDateChange, onTextChange,
@@ -20,4 +23,20 @@ const Post = ({
     );
 };
 
-export default Post;
+const mapStateToProps = (state, ownProps) => ({
+    data: selectPostById(state, ownProps.id),
+});
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    onTitleChange: (text) => {
+        dispatch(setPostTitle(ownProps.id, text));
+    },
+    onDateChange: (date) => {
+        dispatch(setPostDate(ownProps.id, date));
+    },
+    onTextChange: (text) => {
+        dispatch(setPostText(ownProps.id, text));
+    },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Post);

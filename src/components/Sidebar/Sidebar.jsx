@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Navigation from './Navigation';
 
 const Sidebar = ({ posts }) => (
@@ -8,4 +9,8 @@ const Sidebar = ({ posts }) => (
     </div>
 );
 
-export default Sidebar;
+const mapStateToProps = (state) => ({
+    posts: state.posts,
+});
+
+export default connect(mapStateToProps)(Sidebar);

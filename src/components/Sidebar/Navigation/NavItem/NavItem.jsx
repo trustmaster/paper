@@ -1,11 +1,11 @@
 import React from 'react';
-import DeletePostContainer from '../../../Controls/DeletePost/DeletePostContainer';
+import DeletePost from '../../../Controls/DeletePost';
 
 const NavItem = ({ id, title }) => (
     <li key={id}>
         <span>{title}</span>
         &nbsp;
-        <DeletePostContainer id={id} text="-" />
+        <DeletePost id={id} text="-" />
     </li>
 );
 
