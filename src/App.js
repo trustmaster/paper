@@ -4,6 +4,7 @@ import './App.css';
 import initialState from './state/initial';
 import Content from './components/Content';
 import Sidebar from './components/Sidebar';
+import ConfirmModal from './components/Controls/ConfirmModal/ConfirmModal';
 
 class App extends React.Component {
     constructor(props) {
@@ -16,6 +17,7 @@ class App extends React.Component {
             <div className="App">
                 <Sidebar />
                 <Content />
+                <ConfirmModal yesText="Yes" noText="No" />
             </div>
         );
     }

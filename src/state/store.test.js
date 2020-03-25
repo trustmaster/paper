@@ -1,6 +1,6 @@
-import { store } from "./store";
-import initialState from "./initial";
-import { createPost, generateId } from "./actions";
+import store from './store';
+import initialState from './initial';
+import { createPost, generateId } from './actions';
 
 describe('store', () => {
     it('should dispatch actions', (done) => {

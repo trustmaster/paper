@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { deletePost } from '../../../state/actions';
+import { openDialog } from '../../../state/actions';
 
 const DeletePost = ({ text, onClick }) => (
     <button type="button" className="DeletePost" onClick={onClick}>{text}</button>
@@ -13,8 +13,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, { id }) => ({
     onClick: () => {
-        // TODO add confirmation
-        dispatch(deletePost(id));
+        dispatch(openDialog(id, 'Confirm post removal', 'Are you sure you want to delete this post?'));
+        // dispatch(deletePost(id));
     },
 });
 

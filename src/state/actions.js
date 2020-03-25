@@ -2,12 +2,16 @@
 
 export const SET_TITLE = 'SET_TITLE';
 export const SET_DESCRIPTION = 'SET_DESCRIPTION';
+
 export const CREATE_POST = 'CREATE_POST';
 export const SET_POST_TITLE = 'SET_POST_TITLE';
 export const SET_POST_DATE = 'SET_POST_DATE';
 export const SET_POST_TEXT = 'SET_POST_TEXT';
 export const DELETE_POST = 'DELETE_POST';
 export const MOVE_POST = 'MOVE_POST';
+
+export const OPEN_DIALOG = 'OPEN_DIALOG';
+export const CLOSE_DIALOG = 'CLOSE_DIALOG';
 
 // Action creators
 
@@ -43,11 +47,21 @@ export function movePost(id, index) {
     return { type: MOVE_POST, id, index };
 }
 
+export function openDialog(id, label, text) {
+    return {
+        type: OPEN_DIALOG, id, label, text,
+    };
+}
+
+export function closeDialog(id) {
+    return { type: CLOSE_DIALOG, id };
+}
+
 export function generateId(length) {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-';
     let res = '';
-    for (let i = 0; i < length; i++) {
-        res += chars.charAt(Math.floor(Math.random() * chars.length))
+    for (let i = 0; i < length; i += 1) {
+        res += chars.charAt(Math.floor(Math.random() * chars.length));
     }
     return res;
 }
