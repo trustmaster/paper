@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import blog from './state/reducers';
-import initialState from './state/initial';
 
-const store = createStore(blog, initialState);
-store.subscribe(() => console.log(store.getState()));
+const store = createStore(blog, applyMiddleware(thunk));
 
 ReactDOM.render(
     <Provider store={store}>

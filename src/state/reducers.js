@@ -31,7 +31,7 @@ export function description(state = initialState.description, action) {
     }
 }
 
-export function posts(state = [], action) {
+export function posts(state = initialState.posts, action) {
     switch (action.type) {
     case CREATE_POST:
         return [

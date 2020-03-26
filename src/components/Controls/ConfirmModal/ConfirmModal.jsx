@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 import { connect } from 'react-redux';
-import { closeDialog } from '../../../state/actions';
+import { handleDialog } from '../../../state/actions';
 
 const ConfirmModal = ({
     isOpen,
+    id,
     label,
     confirmationText,
     yesText,
     noText,
-    handleYes,
-    handleNo,
+    handleButton,
 }) => (
     <div>
         <ReactModal
@@ -18,8 +18,8 @@ const ConfirmModal = ({
             contentLabel={label}
         >
             <div>{confirmationText}</div>
-            <button type="button" className="confirmYes" onClick={handleYes}>{yesText}</button>
-            <button type="button" className="confirmNo" onClick={handleNo}>{noText}</button>
+            <button type="button" className="confirmYes" onClick={() => handleButton(id, true)}>{yesText}</button>
+            <button type="button" className="confirmNo" onClick={() => handleButton(id, false)}>{noText}</button>
         </ReactModal>
     </div>
 
@@ -34,14 +34,9 @@ const mapStateToProps = (state, ownProps) => ({
     noText: ownProps.noText,
 });
 
-const mapDispatchToProps = (dispatch, { id }) => ({
-    handleYes: () => {
-        // dispatch(deletePost(id));
-        dispatch(closeDialog(id));
-    },
-    handleNo: () => {
-        console.log('No');
-        dispatch(closeDialog(id));
+const mapDispatchToProps = (dispatch) => ({
+    handleButton: (id, result) => {
+        dispatch(handleDialog(id, result));
     },
 });
 

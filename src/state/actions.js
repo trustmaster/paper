@@ -11,6 +11,7 @@ export const DELETE_POST = 'DELETE_POST';
 export const MOVE_POST = 'MOVE_POST';
 
 export const OPEN_DIALOG = 'OPEN_DIALOG';
+export const HANDLE_DIALOG = 'HANDLE_DIALOG';
 export const CLOSE_DIALOG = 'CLOSE_DIALOG';
 
 // Action creators
@@ -53,8 +54,17 @@ export function openDialog(id, label, text) {
     };
 }
 
-export function closeDialog(id) {
-    return { type: CLOSE_DIALOG, id };
+export function closeDialog(id, result) {
+    return { type: CLOSE_DIALOG, id, result };
+}
+
+export function handleDialog(id, result) {
+    return (dispatch) => {
+        if (result === true) {
+            dispatch(deletePost(id));
+        }
+        dispatch(closeDialog(id, result));
+    };
 }
 
 export function generateId(length) {

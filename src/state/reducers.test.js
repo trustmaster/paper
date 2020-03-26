@@ -240,7 +240,7 @@ describe('dialog reducer', () => {
             };
             const expected = initialState.dialog;
 
-            const action = closeDialog(state.id);
+            const action = closeDialog(state.id, false);
             const result = dialog(state, action);
             expect(result).toEqual(expected);
         });

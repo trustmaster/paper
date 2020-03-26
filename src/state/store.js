@@ -1,5 +1,5 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import blog from './reducers';
-import initialState from './initial';
 
-export default createStore(blog, initialState);
+export default createStore(blog, applyMiddleware(thunk));
