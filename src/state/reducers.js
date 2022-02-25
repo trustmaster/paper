@@ -13,7 +13,7 @@ import {
 } from './actions';
 import initialState from './initial';
 
-export function title(state = initialState.title, action) {
+export function title(state = initialState.title, action = '') {
     switch (action.type) {
     case SET_TITLE:
         return action.title;
@@ -22,7 +22,7 @@ export function title(state = initialState.title, action) {
     }
 }
 
-export function description(state = initialState.description, action) {
+export function description(state = initialState.description, action = '') {
     switch (action.type) {
     case SET_DESCRIPTION:
         return action.description;
@@ -31,7 +31,7 @@ export function description(state = initialState.description, action) {
     }
 }
 
-export function posts(state = initialState.posts, action) {
+export function posts(state = initialState.posts, action = '') {
     switch (action.type) {
     case CREATE_POST:
         return [
@@ -83,7 +83,7 @@ export function posts(state = initialState.posts, action) {
     }
 }
 
-export function dialog(state = initialState.dialog, action) {
+export function dialog(state = initialState.dialog, action = '') {
     switch (action.type) {
     case OPEN_DIALOG:
         return {

@@ -4,14 +4,14 @@
   "private": true,
   "dependencies": {
     "medium-editor": "^5.23.3",
-    "react": "^16.13.1",
-    "react-datepicker": "^2.14.1",
-    "react-dom": "^16.13.1",
-    "react-modal": "^3.11.2",
-    "react-redux": "^7.2.0",
-    "react-scripts": "^3.4.1",
-    "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "react": "^17.0.2",
+    "react-datepicker": "^4.6.0",
+    "react-dom": "^17.0.2",
+    "react-modal": "^3.14.4",
+    "react-redux": "^7.2.6",
+    "react-scripts": "^5.0.0",
+    "redux": "^4.1.2",
+    "redux-thunk": "^2.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,11 +35,11 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^6.6.0",
-    "eslint-config-airbnb": "^18.1.0",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-react-hooks": "^1.7.0"
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.0",
+    "eslint-plugin-react-hooks": "^4.3.0"
   }
 }

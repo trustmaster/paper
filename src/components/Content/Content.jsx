@@ -6,26 +6,28 @@ import AddPost from '../Controls/AddPost';
 import { setDescription, setTitle } from '../../state/actions';
 import selectPostIds from './ContentSelectors';
 
-const Content = ({
+function Content({
     title,
     description,
     postIds,
     onTitleChange,
     onDescriptionChange,
-}) => (
-    <div className="Content">
-        <div className="Page">
-            <h1><Editable text={title} onChange={onTitleChange} /></h1>
-            <div className="subtitle"><em><Editable text={description} onChange={onDescriptionChange} /></em></div>
+}) {
+    return (
+        <div className="Content">
+            <div className="Page">
+                <h1><Editable text={title} onChange={onTitleChange} /></h1>
+                <div className="subtitle"><em><Editable text={description} onChange={onDescriptionChange} /></em></div>
 
-            {postIds.map((id) => (
-                <Post key={id} id={id} />
-            ))}
+                <AddPost text="Add Post" />
 
-            <AddPost text="Add Post" />
+                {postIds.map((id) => (
+                    <Post key={id} id={id} />
+                )).reverse()}
+            </div>
         </div>
-    </div>
-);
+    );
+}
 
 const mapStateToProps = (state) => ({
     title: state.title,

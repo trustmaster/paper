@@ -2,11 +2,13 @@ import React from 'react';
 import AddPost from '../../Controls/AddPost';
 import NavItem from './NavItem/NavItem';
 
-const Navigation = ({ posts }) => (
-    <ul>
-        {posts.map((post) => (<NavItem id={post.id} title={post.title} />))}
-        <li><AddPost text="+" /></li>
-    </ul>
-);
+function Navigation({ posts }) {
+    return (
+        <ul>
+            <li><AddPost text="+" /></li>
+            {posts.map((post) => (<NavItem id={post.id} title={post.title} />)).reverse()}
+        </ul>
+    );
+}
 
 export default Navigation;
