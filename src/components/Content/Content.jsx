@@ -23,7 +23,7 @@ function Content({
 
                 {postIds.map((id) => (
                     <Post key={id} id={id} />
-                )).reverse()}
+                ))}
             </div>
         </div>
     );

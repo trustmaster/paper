@@ -2,9 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { generateId, createPost } from '../../../state/actions';
 
-const AddPost = ({ text, onClick }) => (
-    <button type="button" className="AddPost" onClick={onClick}>{text}</button>
-);
+function AddPost({ text, onClick }) {
+    return (
+        <button type="button" className="AddPost" onClick={onClick}>{text}</button>
+    );
+}
 
 const mapStateToProps = (state, ownProps) => ({
     text: ownProps.text,

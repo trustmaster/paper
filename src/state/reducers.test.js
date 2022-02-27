@@ -68,7 +68,7 @@ describe('posts reducer', () => {
             expect(result).toEqual([post]);
         });
 
-        it('should append a post to existing posts', () => {
+        it('should prepend a post to existing posts', () => {
             const state = generateRandPosts(5);
             const id = generateId(12);
             const date = new Date();
@@ -83,7 +83,7 @@ describe('posts reducer', () => {
             const action = createPost(id, date);
             const result = posts(state, action);
 
-            expect(result).toEqual([...state, post]);
+            expect(result).toEqual([post, ...state]);
         });
     });
 
@@ -185,31 +185,23 @@ describe('posts reducer', () => {
         it('should change post indexes when moving up', () => {
             const state = generateRandPosts(8);
             const post = state[5];
-            const indexes = [1, 2, 4, 5, 6, 3, 8, 9];
 
-            const action = movePost(post.id, 3);
+            const action = movePost(5, 3);
             const result = posts(state, action);
 
             expect(result).toHaveLength(state.length);
-            expect(result[5].index).toEqual(3);
-            result.forEach((item, i) => {
-                expect(item.index).toEqual(indexes[i]);
-            });
+            expect(result[3]).toEqual(post);
         });
 
         it('should change post indexes when moving down', () => {
             const state = generateRandPosts(8);
             const post = state[4];
-            const indexes = [1, 2, 3, 4, 7, 6, 8, 9];
 
-            const action = movePost(post.id, 7);
+            const action = movePost(4, 7);
             const result = posts(state, action);
 
             expect(result).toHaveLength(state.length);
-            expect(result[4].index).toEqual(7);
-            result.forEach((item, i) => {
-                expect(item.index).toEqual(indexes[i]);
-            });
+            expect(result[7]).toEqual(post);
         });
     });
 });

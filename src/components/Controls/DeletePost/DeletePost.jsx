@@ -2,9 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { openDialog } from '../../../state/actions';
 
-const DeletePost = ({ text, onClick }) => (
-    <button type="button" className="DeletePost" onClick={onClick}>{text}</button>
-);
+function DeletePost({ text, onClick }) {
+    return (
+        <button type="button" className="DeletePost" onClick={onClick}>{text}</button>
+    );
+}
 
 const mapStateToProps = (state, ownProps) => ({
     text: ownProps.text,

@@ -44,8 +44,10 @@ export function deletePost(id) {
     return { type: DELETE_POST, id };
 }
 
-export function movePost(id, index) {
-    return { type: MOVE_POST, id, index };
+export function movePost(fromIndex, toIndex) {
+    return {
+        type: MOVE_POST, fromIndex, toIndex,
+    };
 }
 
 export function openDialog(id, label, text) {

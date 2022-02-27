@@ -31,11 +31,19 @@ export function description(state = initialState.description, action = '') {
     }
 }
 
+// a little function to help us with reordering the result
+const reorder = (list, startIndex, endIndex) => {
+    const result = Array.from(list);
+    const [removed] = result.splice(startIndex, 1);
+    result.splice(endIndex, 0, removed);
+
+    return result;
+};
+
 export function posts(state = initialState.posts, action = '') {
     switch (action.type) {
     case CREATE_POST:
         return [
-            ...state,
             {
                 id: action.id,
                 index: state.length + 1,
@@ -43,6 +51,7 @@ export function posts(state = initialState.posts, action = '') {
                 date: action.date,
                 text: '',
             },
+            ...state,
         ];
     case SET_POST_TITLE:
         return state.map((post) => {
@@ -68,16 +77,17 @@ export function posts(state = initialState.posts, action = '') {
     case DELETE_POST:
         return state.filter((post) => post.id !== action.id);
     case MOVE_POST:
-        return state.map((post) => {
-            // TODO change this so that indexes don't grow rapidly
-            if (post.id === action.id) {
-                return { ...post, index: action.index };
-            }
-            if (post.index >= action.index) {
-                return { ...post, index: post.index + 1 };
-            }
-            return post;
-        });
+        return reorder(state, action.fromIndex, action.toIndex);
+        // return state.map((post) => {
+        //     // TODO change this so that indexes don't grow rapidly
+        //     if (post.id === action.id) {
+        //         return { ...post, index: action.index };
+        //     }
+        //     if (post.index >= action.index) {
+        //         return { ...post, index: post.index + 1 };
+        //     }
+        //     return post;
+        // });
     default:
         return state;
     }
