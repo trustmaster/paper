@@ -21,6 +21,8 @@ export default class Editable extends React.Component {
         super(props);
         this.isEditing = true;
         this.updatedText = '';
+        this.handleChange = this.handleChange.bind(this);
+        this.handleBlur = this.handleBlur.bind(this);
     }
 
     handleChange(text) {
