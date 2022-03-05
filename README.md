@@ -69,7 +69,7 @@ Time to introduce Redux for state management and to bring Content and Sidebar to
 
 Additionally, operations like deleting posts should be implemented.
 
-#### Ordering content
+#### Ordering content :white_check_mark:
 
 Posts can be ordered via Drag & Drop in the sidebar.
 

@@ -5,9 +5,9 @@ import Editable from '../Editable';
 import selectPostById from './PostSelectors';
 import { setPostTitle, setPostDate, setPostText } from '../../../state/actions';
 
-const Post = ({
+function Post({
     data, onTitleChange, onDateChange, onTextChange,
-}) => {
+}) {
     const {
         title, date, image, text,
     } = data;
@@ -21,7 +21,7 @@ const Post = ({
             </div>
         </div>
     );
-};
+}
 
 const mapStateToProps = (state, ownProps) => ({
     data: selectPostById(state, ownProps.id),

@@ -3,7 +3,7 @@ import ReactModal from 'react-modal';
 import { connect } from 'react-redux';
 import { handleDialog } from '../../../state/actions';
 
-const ConfirmModal = ({
+function ConfirmModal({
     isOpen,
     id,
     label,
@@ -11,19 +11,21 @@ const ConfirmModal = ({
     yesText,
     noText,
     handleButton,
-}) => (
-    <div>
-        <ReactModal
-            isOpen={isOpen}
-            contentLabel={label}
-        >
-            <div>{confirmationText}</div>
-            <button type="button" className="confirmYes" onClick={() => handleButton(id, true)}>{yesText}</button>
-            <button type="button" className="confirmNo" onClick={() => handleButton(id, false)}>{noText}</button>
-        </ReactModal>
-    </div>
+}) {
+    return (
+        <div>
+            <ReactModal
+                isOpen={isOpen}
+                contentLabel={label}
+            >
+                <div>{confirmationText}</div>
+                <button type="button" className="confirmYes" onClick={() => handleButton(id, true)}>{yesText}</button>
+                <button type="button" className="confirmNo" onClick={() => handleButton(id, false)}>{noText}</button>
+            </ReactModal>
+        </div>
 
-);
+    );
+}
 
 const mapStateToProps = (state, ownProps) => ({
     isOpen: state.dialog.isOpen,
